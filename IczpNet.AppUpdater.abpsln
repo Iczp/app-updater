@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "IczpNet.AppUpdater": {
+      "path": "IczpNet.AppUpdater.abpmdl"
+    }
+  }
+}
