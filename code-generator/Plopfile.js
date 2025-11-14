@@ -5,7 +5,7 @@ const pluralize = require('pluralize');
 const fs = require('fs');
 const path = require('path');
 
-const project = `Invoicing`;
+const project = `AppUpdater`;
 const namespace = `IczpNet.${project}`;
 const srcPrefix = `../src/${namespace}`;
 const localizationDir = `${srcPrefix}.Domain.Shared/Localization/${project}/`;
