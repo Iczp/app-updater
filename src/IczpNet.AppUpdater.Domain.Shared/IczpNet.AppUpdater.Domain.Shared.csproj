@@ -10,7 +10,7 @@
     <Version>0.0.1</Version>
     <Authors>IczpNet</Authors>
     <RepositoryUrl>https://github.com/Iczp/app-updater.git</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/app-updater.git</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/iczp/app-updater.git</PackageProjectUrl>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Copyright>(c) iczp.net</Copyright>
