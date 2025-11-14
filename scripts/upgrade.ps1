@@ -84,8 +84,9 @@ else {
 }
 
 Write-Host "更新Abp" -ForegroundColor Cyan
-Write-Host "abp update" -ForegroundColor Cyan
-abp update
+Write-Host "abp update --version 9.0.3" -ForegroundColor Cyan
+abp update --version 9.0.3
+
 # dotnet build --configuration Release
 # if ($?) {
 #     Write-Host "项目构建成功。" -ForegroundColor Green
