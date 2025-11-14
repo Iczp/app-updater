@@ -1,4 +1,7 @@
 ﻿using IczpNet.AbpCommons.EntityFrameworkCore;
+using IczpNet.AppUpdater.AppClients;
+using IczpNet.AppUpdater.AppVersionDevices;
+using IczpNet.AppUpdater.AppVersions;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 
@@ -33,5 +36,18 @@ public static class AppUpdaterDbContextModelCreatingExtensions
 
         // 自加实体配置
         builder.ConfigEntities<AppUpdaterDomainModule>(AppUpdaterDbProperties.DbTablePrefix, AppUpdaterDbProperties.DbSchema);
+
+        builder.Entity<AppClient>(b =>
+        {
+            b.HasIndex(x => x.AppId).IsUnique(true);
+        });
+
+        builder.Entity<AppVersion>(b =>
+        {
+            b.HasIndex(x => x.AppClientId);
+            b.HasIndex(x => new { x.AppClientId, x.VersionCode }).IsDescending([false, true]).IsUnique(true);
+        });
+
+        builder.Entity<AppVersionDevice>((b => { b.HasKey(x => new { x.AppVersionId, x.AppDeviceId }); }));
     }
 }
