@@ -8,6 +8,7 @@ namespace IczpNet.AppUpdater;
 [DependsOn(
     typeof(AppUpdaterApplicationContractsModule),
     typeof(AbpHttpClientModule))]
+
 public class AppUpdaterHttpApiClientModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

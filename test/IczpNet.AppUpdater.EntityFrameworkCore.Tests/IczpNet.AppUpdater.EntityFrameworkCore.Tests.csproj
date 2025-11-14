@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="9.0.0" />
     <ProjectReference Include="..\..\src\IczpNet.AppUpdater.EntityFrameworkCore\IczpNet.AppUpdater.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\IczpNet.AppUpdater.Application.Tests\IczpNet.AppUpdater.Application.Tests.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="9.0.3" />

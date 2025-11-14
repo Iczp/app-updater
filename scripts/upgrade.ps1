@@ -37,6 +37,7 @@ Get-ChildItem -Path $projectsPath -Recurse -Filter *.csproj | ForEach-Object {
     $file = $_.FullName
     # 更新 TargetFramework 到 net9.0
     (Get-Content $file) -replace '<TargetFramework>.*<\/TargetFramework>', '<TargetFramework>net9.0</TargetFramework>' | Set-Content $file
+    (Get-Content $file) -replace '<TargetFrameworks>netstandard2.0;netstandard2.1;net8.0</TargetFrameworks>', '<TargetFrameworks>net9.0</TargetFrameworks>' | Set-Content $file
     (Get-Content $file) -replace '<TargetFrameworks>.*<\/TargetFrameworks>', '<TargetFrameworks>net9.0</TargetFrameworks>' | Set-Content $file
     (Get-Content $file) -replace '<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="8.0.0" />', '<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="9.0.0" />' | Set-Content $file
     (Get-Content $file) -replace '<PackageReference Include="IdentityModel" Version="6.2.0" />', '<PackageReference Include="IdentityModel" Version="7.0.0" />' | Set-Content $file

@@ -2,6 +2,7 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.AppUpdater;
 
@@ -11,6 +12,7 @@ namespace IczpNet.AppUpdater;
     typeof(AbpDddApplicationModule),
     typeof(AbpAutoMapperModule)
     )]
+    [DependsOn(typeof(AbpCommonsApplicationModule))]
 public class AppUpdaterApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IczpNet.AbpCommons.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 
 namespace IczpNet.AppUpdater.EntityFrameworkCore;
@@ -29,5 +30,8 @@ public static class AppUpdaterDbContextModelCreatingExtensions
             b.HasIndex(q => q.CreationTime);
         });
         */
+
+        // 自加实体配置
+        builder.ConfigEntities<AppUpdaterDomainModule>(AppUpdaterDbProperties.DbTablePrefix, AppUpdaterDbProperties.DbSchema);
     }
 }

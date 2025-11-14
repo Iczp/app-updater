@@ -6,6 +6,7 @@ using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.AppUpdater;
 
@@ -13,6 +14,7 @@ namespace IczpNet.AppUpdater;
     typeof(AbpValidationModule),
     typeof(AbpDddDomainSharedModule)
 )]
+[DependsOn(typeof(AbpCommonsDomainSharedModule))]
 public class AppUpdaterDomainSharedModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

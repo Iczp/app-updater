@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Domain;
+﻿using IczpNet.AbpCommons;
+using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
 namespace IczpNet.AppUpdater;
@@ -7,6 +8,7 @@ namespace IczpNet.AppUpdater;
     typeof(AbpDddDomainModule),
     typeof(AppUpdaterDomainSharedModule)
 )]
+[DependsOn(typeof(AbpCommonsDomainModule))]
 public class AppUpdaterDomainModule : AbpModule
 {
 
