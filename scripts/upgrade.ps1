@@ -1,5 +1,5 @@
 # 配置参数
-$defaultVersion = "0.9.0.1"
+$defaultVersion = "0.0.1"
 $projectsPath = "." # 替换为你的解决方案路径
 
 # 检查是否有未提交的 Git 更改
