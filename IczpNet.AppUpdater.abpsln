@@ -3,5 +3,10 @@
     "IczpNet.AppUpdater": {
       "path": "IczpNet.AppUpdater.abpmdl"
     }
+  },
+  "id": "839d2352-997c-4b98-a8ef-c67a67f8eb7b",
+  "versions": {
+    "AbpFramework": "9.0.3",
+    "AbpCommercial": "9.0.3"
   }
 }

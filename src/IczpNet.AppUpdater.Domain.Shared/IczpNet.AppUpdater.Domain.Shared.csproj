@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -7,20 +7,41 @@
     <Nullable>enable</Nullable>
     <RootNamespace>IczpNet.AppUpdater</RootNamespace>
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <Version>0.0.1</Version>
+    <Authors>IczpNet</Authors>
+    <RepositoryUrl>https://github.com/Iczp/app-updater.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/app-updater.git</PackageProjectUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>(c) iczp.net</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Chat module for abp</Description>
+    <PackageIcon>IczpNet.jpg</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain.Shared" Version="8.1.3" />
-    <PackageReference Include="Volo.Abp.Validation" Version="8.1.3" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain.Shared" Version="9.0.3" />
+    <PackageReference Include="Volo.Abp.Validation" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\AppUpdater\*.json" />
     <Content Remove="Localization\AppUpdater\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\IczpNet.jpg" Link="IczpNet.jpg">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+    <None Include="..\..\README.md" Link="README.md">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
   </ItemGroup>
 
 </Project>

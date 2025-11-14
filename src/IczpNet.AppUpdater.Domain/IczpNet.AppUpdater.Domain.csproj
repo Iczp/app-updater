@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -6,11 +6,32 @@
     <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0</TargetFrameworks>
     <Nullable>enable</Nullable>
     <RootNamespace>IczpNet.AppUpdater</RootNamespace>
+    <Version>0.0.1</Version>
+    <Authors>IczpNet</Authors>
+    <RepositoryUrl>https://github.com/Iczp/app-updater.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/app-updater.git</PackageProjectUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>(c) iczp.net</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Chat module for abp</Description>
+    <PackageIcon>IczpNet.jpg</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="8.1.3" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="9.0.3" />
     <ProjectReference Include="..\IczpNet.AppUpdater.Domain.Shared\IczpNet.AppUpdater.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\IczpNet.jpg" Link="IczpNet.jpg">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+    <None Include="..\..\README.md" Link="README.md">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
   </ItemGroup>
 
 </Project>
