@@ -50,7 +50,7 @@ module.exports = function (plop) {
     'CreateOrUpdateInput',
     'CreateInputValidator',
     'UpdateInputValidator',
-    'Localization',
+    // 'Localization',
   ];
   const modifies = ['AutoMapperProfile', 'Permissions'];
   plop.setGenerator('Repository', {

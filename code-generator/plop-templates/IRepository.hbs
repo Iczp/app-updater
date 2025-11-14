@@ -4,7 +4,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace {{namespace}}.{{pascalCase pluralName}};
 
-public interface I{{pascalCase name}}Repository : IInvoicingRepository<{{pascalCase name}}, {{pascalCase primaryKey}}>
+public interface I{{pascalCase name}}Repository : I{{pascalCase project}}Repository<{{pascalCase name}}, {{pascalCase primaryKey}}>
 {
 
 }
