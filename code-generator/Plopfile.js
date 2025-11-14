@@ -110,7 +110,13 @@ module.exports = function (plop) {
           );
       }
 
-      return ['Start', ...actions.filter((x) => !x.isExists), 'End'];
+      return [
+        'Start',
+        ...actions
+          .map((x) => ({ ...x, data: { ...x.data, ...args } }))
+          .filter((x) => !x.isExists),
+        'End',
+      ];
     },
   });
   // Define a generator for a new Net9 component
@@ -384,7 +390,9 @@ module.exports = function (plop) {
 
       args.isLocalization && applyLocalization();
 
-      return actions.filter((x) => !x.isExists);
+      return actions
+        .map((x) => ({ ...x, data: { ...x.data, ...args } }))
+        .filter((x) => !x.isExists);
     },
     after: function (answers, config, plop) {
       // 在所有动作执行完毕后调用此函数
