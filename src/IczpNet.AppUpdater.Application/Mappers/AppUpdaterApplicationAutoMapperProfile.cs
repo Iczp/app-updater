@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace IczpNet.AppUpdater;
+namespace IczpNet.AppUpdater.Mappers;
 
 public class AppUpdaterApplicationAutoMapperProfile : Profile
 {

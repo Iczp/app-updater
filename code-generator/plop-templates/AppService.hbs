@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace {{namespace}}.{{pascalCase pluralName}};
 
 /// <inheritdoc />
-public class {{pascalCase name}}AppService(I{{pascalCase name}}Repository repository) : CrudAppServiceBase<{{pascalCase name}}, {{pascalCase name}}DetailDto, {{pascalCase name}}Dto, {{pascalCase primaryKey}}, {{pascalCase name}}GetListInput, {{pascalCase name}}CreateInput, {{pascalCase name}}UpdateInput>, I{{pascalCase name}}AppService
+public class {{pascalCase name}}AppService(I{{pascalCase name}}Repository repository) : CrudAppServiceBase<{{pascalCase name}}, {{pascalCase name}}DetailDto, {{pascalCase name}}Dto, {{pascalCase primaryKey}}, {{pascalCase name}}GetListInput, {{pascalCase name}}CreateInput, {{pascalCase name}}UpdateInput>(repository), I{{pascalCase name}}AppService
 {
     protected override string? GetPolicyName { get; set; } = {{pascalCase project}}Permissions.{{pascalCase name}}Permissions.GetItem;
     protected override string? GetListPolicyName { get; set; } = {{pascalCase project}}Permissions.{{pascalCase name}}Permissions.GetList;
