@@ -46,11 +46,6 @@ public class AppDevice : BaseEntity<Guid>, IIsEnabled
     /// <summary>
     /// 
     /// </summary>
-    public virtual bool IsEnabled { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
     public virtual IList<AppVersionDevice> AppVersionDeviceList { get; set; } = [];
 
 }
