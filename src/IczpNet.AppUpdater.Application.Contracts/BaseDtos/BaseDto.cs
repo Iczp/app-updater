@@ -2,6 +2,6 @@
 
 namespace IczpNet.AppUpdater.BaseDtos;
 
-public class BaseDto<T> : EntityDto<T> where T : class
+public class BaseDto<T> : EntityDto<T>
 {
 }
