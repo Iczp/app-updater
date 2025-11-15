@@ -10,4 +10,6 @@ public class AppUpdaterPermissions
     {
         return ReflectionHelper.GetPublicConstantsRecursively(typeof(AppUpdaterPermissions));
     }
+
+    /*---------code-generator-permissions: Do not modify or delete this line of comments--------*/
 }

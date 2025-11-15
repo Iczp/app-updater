@@ -222,49 +222,49 @@ module.exports = function (plop) {
       args.isGetListInput &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/Dtos/{{pascalCase name}}GetListInput.cs`,
+          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/{{pascalCase name}}GetListInput.cs`,
           templateFile: 'plop-templates/Dtos/GetListInput.hbs',
         });
       // Dto
       args.isDto &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/Dtos/{{pascalCase name}}Dto.cs`,
+          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/{{pascalCase name}}Dto.cs`,
           templateFile: 'plop-templates/Dtos/Dto.hbs',
         });
       // CreateInput
       args.isCreateInput &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/Dtos/{{pascalCase name}}CreateInput.cs`,
+          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/{{pascalCase name}}CreateInput.cs`,
           templateFile: 'plop-templates/Dtos/CreateInput.hbs',
         });
       // UpdateInput
       args.isUpdateInput &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/Dtos/{{pascalCase name}}UpdateInput.cs`,
+          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/{{pascalCase name}}UpdateInput.cs`,
           templateFile: 'plop-templates/Dtos/UpdateInput.hbs',
         });
       // SampleDto
       args.isSampleDto &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/Dtos/{{pascalCase name}}SampleDto.cs`,
+          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/{{pascalCase name}}SampleDto.cs`,
           templateFile: 'plop-templates/Dtos/SampleDto.hbs',
         });
       // DetailDto
       args.isDetailDto &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/Dtos/{{pascalCase name}}DetailDto.cs`,
+          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/{{pascalCase name}}DetailDto.cs`,
           templateFile: 'plop-templates/Dtos/DetailDto.hbs',
         });
       // CreateOrUpdateInput
       args.isCreateOrUpdateInput &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/Dtos/{{pascalCase name}}CreateOrUpdateInput.cs`,
+          path: `${srcPrefix}.Application.Contracts/{{pascalCase pluralName}}/{{pascalCase name}}CreateOrUpdateInput.cs`,
           templateFile: 'plop-templates/Dtos/CreateOrUpdateInput.hbs',
         });
       // CreateInputValidator
@@ -378,7 +378,7 @@ module.exports = function (plop) {
         "${keyName}": "{{pascalCase name}}",
         "${keyName}.GetItem": "${getValue('GetItem')}",
         "${keyName}.GetList": "${getValue('Update')}",
-        "${keyName}..Update": "${getValue('GetItem')}",
+        "${keyName}.Update": "${getValue('GetItem')}",
         "${keyName}.Create": "${getValue('Create')}",
         "${keyName}.Delete": "${getValue('Delete')}",
         "${keyName}.SetIsEnabled": "${getValue('SetIsEnabled')}",

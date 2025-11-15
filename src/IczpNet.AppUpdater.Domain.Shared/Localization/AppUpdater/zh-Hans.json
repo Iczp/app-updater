@@ -2,6 +2,8 @@
   "culture": "zh-Hans",
   "texts": {
     "MyAccount": "我的账户",
-    "SamplePageMessage": "AppUpdater 模块的示例页面"
+    "SamplePageMessage": "AppUpdater 模块的示例页面",
+
+    "code-generator-localization": "Do not modify or delete this line of comments"
   }
 }
