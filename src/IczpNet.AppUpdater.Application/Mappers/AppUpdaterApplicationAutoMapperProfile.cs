@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using IczpNet.AppUpdater.AppClients;
 /*---------code-generator-namespace: Do not modify or delete this line of comments--------*/
 
 namespace IczpNet.AppUpdater.Mappers;
