@@ -92,7 +92,7 @@ module.exports = function (plop) {
 
       actions.push({
         type: 'add',
-        path: `${srcPrefix}.EntityFrameworkCore/Repositories/{{pascalCase name}}Repository.cs`,
+        path: `${srcPrefix}.EntityFrameworkCore/{{pascalCase pluralName}}/{{pascalCase name}}Repository.cs`,
         templateFile: 'plop-templates/Repository.hbs',
       });
 
@@ -187,7 +187,7 @@ module.exports = function (plop) {
       args.isRepository &&
         actions.push({
           type: 'add',
-          path: `${srcPrefix}.EntityFrameworkCore/Repositories/{{pascalCase name}}Repository.cs`,
+          path: `${srcPrefix}.EntityFrameworkCore/{{pascalCase pluralName}}/{{pascalCase name}}Repository.cs`,
           templateFile: 'plop-templates/Repository.hbs',
         });
       // Manager
