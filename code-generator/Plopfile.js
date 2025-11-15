@@ -287,15 +287,6 @@ module.exports = function (plop) {
           type: 'modify',
           path: `${srcPrefix}.Application/Mappers/${project}ApplicationAutoMapperProfile.cs`,
           pattern:
-            /\/\*---------code-generator-namespace: Do not modify or delete this line of comments--------\*\//g,
-          template: `using ${namespace}.{{pascalCase pluralName}};\r\nusing ${namespace}.{{pascalCase pluralName}}.Dtos;\r\n/*---------code-generator-namespace: Do not modify or delete this line of comments--------*/`,
-        });
-      // AutoMapperProfile
-      args.isAutoMapperProfile &&
-        actions.push({
-          type: 'modify',
-          path: `${srcPrefix}.Application/Mappers/${project}ApplicationAutoMapperProfile.cs`,
-          pattern:
             /\/\*---------code-generator-mapper: Do not modify or delete this line of comments--------\*\//g,
           template: `
         //{{pascalCase name}}
@@ -314,7 +305,7 @@ module.exports = function (plop) {
           path: `${srcPrefix}.Application/Mappers/${project}ApplicationAutoMapperProfile.cs`,
           pattern:
             /\/\*---------code-generator-namespace: Do not modify or delete this line of comments--------\*\//g,
-          template: `using {{namespace}}.{{pascalCase pluralName}}\r\n
+          template: `using {{namespace}}.{{pascalCase pluralName}};\r\n
 /*---------code-generator-namespace: Do not modify or delete this line of comments--------*/`,
         });
       // Permissions
