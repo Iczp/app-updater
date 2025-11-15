@@ -127,7 +127,7 @@ module.exports = function (plop) {
         type: 'input',
         name: 'name',
         message: 'What is the name of entity?',
-        default: 'Order',
+        default: 'AppClient',
         validate: (value, prompts) => {
           console.log(`input name: ${value}`);
           if (!value) {
