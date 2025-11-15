@@ -100,11 +100,6 @@ public class AppVersion : BaseEntity<Guid>, IIsEnabled
     public virtual bool IsWidget { get; set; }
 
     /// <summary>
-    /// 是否启用 
-    /// </summary>
-    public virtual bool IsEnabled { get; set; }
-
-    /// <summary>
     /// 
     /// </summary>
     public virtual IList<AppVersionDevice> AppVersionDeviceList { get; set; } = [];

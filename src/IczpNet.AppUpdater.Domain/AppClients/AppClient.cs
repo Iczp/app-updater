@@ -39,11 +39,6 @@ public class AppClient : BaseEntity<Guid>, IIsEnabled
     public virtual string? DevDevices { get; set; }
 
     /// <summary>
-    /// 是否启用 
-    /// </summary>
-    public virtual bool IsEnabled { get; set; }
-
-    /// <summary>
     /// 
     /// </summary>
     public virtual IList<AppVersion> AppVersionList { get; set; } = [];
