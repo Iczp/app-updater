@@ -305,7 +305,7 @@ module.exports = function (plop) {
           path: `${srcPrefix}.Application/Mappers/${project}ApplicationAutoMapperProfile.cs`,
           pattern:
             /\/\*---------code-generator-namespace: Do not modify or delete this line of comments--------\*\//g,
-          template: `using {{namespace}}.{{pascalCase pluralName}};\r\n
+          template: `using {{namespace}}.{{pascalCase pluralName}};
 /*---------code-generator-namespace: Do not modify or delete this line of comments--------*/`,
         });
       // Permissions
