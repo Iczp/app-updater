@@ -53,72 +53,72 @@ module.exports = function (plop) {
     // 'Localization',
   ];
   const modifies = ['AutoMapperProfile', 'Permissions'];
-  plop.setGenerator('Repository', {
-    description: 'Generate a new Repository',
-    prompts: [
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is the name of entity?',
-        default: 'Order',
-        validate: (value, prompts) => {
-          console.log(`input name: ${value}`);
-          if (!value) {
-            return 'Please enter a name for your CRUD services.';
-          }
-          prompts.pluralName = plop.getHelper('pascalCase')(pluralize(value));
-          return true;
-        },
-      },
-      {
-        type: 'list',
-        name: 'primaryKey',
-        message: 'What is the type of primary key?',
-        default: 'Guid',
-        choices: ['Guid', 'String', 'Long', 'Int'],
-      },
-    ],
-    actions: (args) => {
-      const actions = [];
-      args = { ...args, namespace, project };
-      console.info('args', args);
-      // IRepository
-      actions.push({
-        type: 'add',
-        path: `${srcPrefix}.Domain/{{pascalCase pluralName}}/I{{pascalCase name}}Repository.cs`,
-        templateFile: 'plop-templates/IRepository.hbs',
-      });
-      // Repository
+  // plop.setGenerator('Repository', {
+  //   description: 'Generate a new Repository',
+  //   prompts: [
+  //     {
+  //       type: 'input',
+  //       name: 'name',
+  //       message: 'What is the name of entity?',
+  //       default: 'Order',
+  //       validate: (value, prompts) => {
+  //         console.log(`input name: ${value}`);
+  //         if (!value) {
+  //           return 'Please enter a name for your CRUD services.';
+  //         }
+  //         prompts.pluralName = plop.getHelper('pascalCase')(pluralize(value));
+  //         return true;
+  //       },
+  //     },
+  //     {
+  //       type: 'list',
+  //       name: 'primaryKey',
+  //       message: 'What is the type of primary key?',
+  //       default: 'Guid',
+  //       choices: ['Guid', 'String', 'Long', 'Int'],
+  //     },
+  //   ],
+  //   actions: (args) => {
+  //     const actions = [];
+  //     args = { ...args, namespace, project };
+  //     console.info('args', args);
+  //     // IRepository
+  //     actions.push({
+  //       type: 'add',
+  //       path: `${srcPrefix}.Domain/{{pascalCase pluralName}}/I{{pascalCase name}}Repository.cs`,
+  //       templateFile: 'plop-templates/IRepository.hbs',
+  //     });
+  //     // Repository
 
-      actions.push({
-        type: 'add',
-        path: `${srcPrefix}.EntityFrameworkCore/{{pascalCase pluralName}}/{{pascalCase name}}Repository.cs`,
-        templateFile: 'plop-templates/Repository.hbs',
-      });
+  //     actions.push({
+  //       type: 'add',
+  //       path: `${srcPrefix}.EntityFrameworkCore/{{pascalCase pluralName}}/{{pascalCase name}}Repository.cs`,
+  //       templateFile: 'plop-templates/Repository.hbs',
+  //     });
 
-      // 跳过已存在的文件
-      for (const item of actions.filter((x) => x.type == 'add')) {
-        const filePath = path
-          .join(__dirname, item.path)
-          .replace('{{pascalCase pluralName}}', args.pluralName)
-          .replace('{{pascalCase name}}', args.name);
-        item.isExists = fs.existsSync(filePath);
-        console.warn(item.isExists, `File ${filePath} `);
-        item.isExists &&
-          console.error(
-            `Exists file: '${filePath}' already exists, skipping creation.`,
-          );
-      }
+  //     // 跳过已存在的文件
+  //     for (const item of actions.filter((x) => x.type == 'add')) {
+  //       const filePath = path
+  //         .join(__dirname, item.path)
+  //         .replace('{{pascalCase pluralName}}', args.pluralName)
+  //         .replace('{{pascalCase name}}', args.name);
+  //       item.isExists = fs.existsSync(filePath);
+  //       console.warn(item.isExists, `File ${filePath} `);
+  //       item.isExists &&
+  //         console.error(
+  //           `Exists file: '${filePath}' already exists, skipping creation.`,
+  //         );
+  //     }
 
-      return [
-        'Start',
-        ...actions
-          .map((x) => ({ ...x, data: { ...x.data, ...args } }))
-          .filter((x) => !x.isExists),
-        'End',
-      ];
-    },
-  });
+  //     return [
+  //       'Start',
+  //       ...actions
+  //         .map((x) => ({ ...x, data: { ...x.data, ...args } }))
+  //         .filter((x) => !x.isExists),
+  //       'End',
+  //     ];
+  //   },
+  // });
   // Define a generator for a new Net9 component
   plop.setGenerator('CRUD', {
     description: 'Generate a new CRUD services',
