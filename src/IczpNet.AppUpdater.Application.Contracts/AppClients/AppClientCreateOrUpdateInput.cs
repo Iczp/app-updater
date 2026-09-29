@@ -13,4 +13,6 @@ public class AppClientCreateOrUpdateInput : AppClientCreateInput, IEntityDto<Gui
     /// 
     /// </summary>
     public Guid? Id { get; set; }
+
+    public string? GetObjectKey() =>$"{Id}";
 }
